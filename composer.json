@@ -1,0 +1,24 @@
+{
+    "name": "pixelperfectat/module-cms-importer",
+    "description": "Magento 2 CMS block/page importer",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "André Flitsch",
+            "email": "andre@pixelperfect.at"
+        }
+    ],
+    "require": {
+        "magento/module-cms": "103.0.*",
+        "league/csv": "8.2.1"
+    },
+    "autoload": {
+        "files": [
+            "src/registration.php"
+        ],
+        "psr-4": {
+            "PixelPerfect\\CmsImporter\\": "src"
+        }
+    }
+}
