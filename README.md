@@ -1,8 +1,8 @@
-#Magento CMS importer 
+# Magento CMS importer 
 
 import cms objects using the command line, from a file
 
-##Currently supports:
+## Currently supports:
 
 ### content types
 - cms blocks
