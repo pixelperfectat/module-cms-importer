@@ -20,5 +20,6 @@
         "psr-4": {
             "PixelPerfect\\CmsImporter\\": "src"
         }
-    }
+    },
+    "version": "0.0.2"
 }

@@ -32,6 +32,7 @@ class CmsHelper
     const DIR_VAR       = 'var';
     const CSV_DELIMITER = ';';
     const CSV_ENCLOSURE = '\'';
+    const ALL_STORE_VIEWS = 'all_stores';
 
     /**
      * @var DirectoryReader
@@ -139,7 +140,11 @@ class CmsHelper
      */
     public function createCmsBlocks(MapIterator $csvRecords)
     {
-        $localeStores = $this->fetchLocaleStores();
+        if ($this->getAllowedLocales() === [self::ALL_STORE_VIEWS]) {
+            $localeStores[self::ALL_STORE_VIEWS] = 0;
+        } else {
+            $localeStores = $this->fetchLocaleStores();
+        }
 
         foreach ($csvRecords as $csvRecord) {
             $blockId = strtolower($this->getBlockPrefix() . $csvRecord['identifier']);
