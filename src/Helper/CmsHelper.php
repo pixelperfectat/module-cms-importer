@@ -147,12 +147,19 @@ class CmsHelper
         }
 
         foreach ($csvRecords as $csvRecord) {
-            $blockId = strtolower($this->getBlockPrefix() . $csvRecord['identifier']);
+            $identifier = strtolower($this->getBlockPrefix() . $csvRecord['identifier']);
 
             foreach ($localeStores as $locale => $storeId) {
                 if ($csvRecord['locale'] === $locale) {
-                    $block = $this->blockFactory->create();
-                    $block->setIdentifier($blockId)
+
+                    try {
+                        $block = $this->blockByIdentifier->execute($identifier, (int)$storeId);
+                    } catch (NoSuchEntityException $exception) {
+                        $block = $this->blockFactory->create();
+                        $block->setIdentifier($identifier);
+                    }
+
+                    $block
                         ->setTitle($csvRecord['title'])
                         ->setContent($csvRecord['content'])
                         ->setStores([$storeId]);
