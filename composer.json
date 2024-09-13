@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "magento/module-cms": "103.0.*",
+        "magento/module-cms": ">=103.0",
         "league/csv": "8.2.1"
     },
     "autoload": {
