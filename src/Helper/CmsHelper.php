@@ -172,7 +172,11 @@ class CmsHelper
 
     public function createOrUpdateCmsPages(MapIterator $csvRecords)
     {
-        $localeStores = $this->fetchLocaleStores();
+        if ($this->getAllowedLocales() === [self::ALL_STORE_VIEWS]) {
+            $localeStores[self::ALL_STORE_VIEWS] = 0;
+        } else {
+            $localeStores = $this->fetchLocaleStores();
+        }
 
         foreach ($csvRecords as $csvRecord) {
             $identifier = strtolower($this->getPagePrefix() . $csvRecord['identifier']);
@@ -186,10 +190,10 @@ class CmsHelper
                     $page->setIdentifier($identifier);
                 }
 
-                $page->setTitle($csvRecord['title-' . $locale])
-                    ->setData('secondary_title', $csvRecord['secondary_title-' . $locale])
-                    ->setMetaKeywords($csvRecord['meta_keywords-' . $locale])
-                    ->setMetaDescription($csvRecord['meta_description-' . $locale])
+                $page->setTitle($csvRecord['title-' . $locale] ?? $page->getTitle())
+                    ->setData('secondary_title', $csvRecord['secondary_title-' . $locale] ?? $page->getData('secondary_title'))
+                    ->setMetaKeywords($csvRecord['meta_keywords-' . $locale] ?? $page->getMetaKeywords())
+                    ->setMetaDescription($csvRecord['meta_description-' . $locale] ?? $page->getMetaDescription())
                     ->setMetaTitle($csvRecord['meta_title-' . $locale])
                     ->setContent($csvRecord['content-' . $locale])
                     ->setPageLayout($csvRecord['page_layout'])
