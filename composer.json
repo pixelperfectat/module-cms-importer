@@ -11,7 +11,7 @@
     ],
     "require": {
         "magento/module-cms": "*",
-        "league/csv": "8.2.1"
+        "league/csv": "8.2.1 || ^9.0"
     },
     "autoload": {
         "files": [
