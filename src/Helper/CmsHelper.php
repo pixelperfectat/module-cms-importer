@@ -215,7 +215,7 @@ class CmsHelper
      * @return Iterator
      * @throws Exception
      */
-    public function fetchCsvRecords(callable $func = null): Iterator
+    public function fetchCsvRecords(?callable $func = null): Iterator
     {
         if ($this->isUseModuleDirectory()) {
             $moduleDirectory = $this->directoryReader->getModuleDir('', 'PixelPerfect_CmsImporter');

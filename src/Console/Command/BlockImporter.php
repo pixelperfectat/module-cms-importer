@@ -27,7 +27,7 @@ class BlockImporter extends Command
 
     public function __construct(
         CmsHelper $cmsHelper,
-        string    $name = null
+        ?string    $name = null
     ) {
 
         parent::__construct($name);
