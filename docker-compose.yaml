@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  phpfpm:
+    image: php:7.4-fpm
+    volumes:
+      - ./src:/var/html
+
+  composer:
+    image: composer/composer
+    command: install
+    volumes:
+      - ./:/app
+
