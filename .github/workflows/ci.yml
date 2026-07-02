@@ -1,0 +1,6 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  ci:
+    uses: pixelperfectat/ci-templates/.github/workflows/magento-module.yml@0.1.3
+    secrets: inherit
