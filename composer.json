@@ -3,6 +3,8 @@
     "description": "Magento 2 CMS block/page importer",
     "type": "magento2-module",
     "license": "proprietary",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "authors": [
         {
             "name": "André Flitsch",
@@ -10,8 +12,13 @@
         }
     ],
     "require": {
+        "php": "^8.3",
         "magento/module-cms": "*",
         "league/csv": "8.2.1 || ^9.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6",
+        "pixelperfectat/coding-standard": "^0.1.0"
     },
     "autoload": {
         "files": [
@@ -21,19 +28,38 @@
             "PixelPerfect\\CmsImporter\\": "src"
         }
     },
-    "version": "0.0.5",
-    "repositories": [
-      {
-        "type": "composer",
-        "url": "https://repo.magento.com/"
-      }
-    ],
-    "config": {
-      "allow-plugins": {
-        "magento/composer-dependency-version-audit-plugin": true
-      }
+    "scripts": {
+        "lint": "parallel-lint --exclude vendor --exclude generated .",
+        "cs": "phpcs",
+        "cs:fix": "phpcbf",
+        "stan": "phpstan analyse",
+        "test": "phpunit",
+        "ci:validate": "@composer validate --no-check-publish",
+        "check": [
+            "@ci:validate",
+            "@lint",
+            "@cs",
+            "@stan",
+            "@test"
+        ]
     },
-    "require-dev": {
-        "rector/rector": "^2.2"
-    }
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "ergebnis/composer-normalize": true,
+            "laminas/laminas-dependency-plugin": true,
+            "magento/*": true,
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "version": "0.0.5"
 }

@@ -59,7 +59,9 @@ class StoreHelper
         $stores = $this->storeManager->getStores();
         foreach ($stores as $store) {
             $localeCode                = $this->scopeConfig->getValue(
-                'general/locale/code', ScopeInterface::SCOPE_STORE, $store->getId()
+                'general/locale/code',
+                ScopeInterface::SCOPE_STORE,
+                $store->getId()
             );
             $localeStores[$localeCode] = $store->getId();
         }

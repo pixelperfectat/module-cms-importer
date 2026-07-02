@@ -41,7 +41,7 @@ class BlockImporter extends Command
     {
         $this->setName('cms-importer:block');
         $this->setDescription('Import CMS blocks from specified source file');
-        $this->addArgument(self::FILENAME, InputArgument::REQUIRED,'Full path to the file being imported');
+        $this->addArgument(self::FILENAME, InputArgument::REQUIRED, 'Full path to the file being imported');
         parent::configure();
     }
 
