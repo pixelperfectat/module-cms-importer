@@ -1,0 +1,101 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^PHPDoc tag @return with type void is incompatible with native type int\\.$#"
+			count: 1
+			path: src/Console/Command/BlockImporter.php
+
+		-
+			message: "#^Parameter \\#1 \\$csvRecords of method PixelPerfect\\\\CmsImporter\\\\Helper\\\\CmsHelper\\:\\:createCmsBlocks\\(\\) expects League\\\\Csv\\\\Modifier\\\\MapIterator, Iterator given\\.$#"
+			count: 1
+			path: src/Console/Command/BlockImporter.php
+
+		-
+			message: "#^Call to an undefined method League\\\\Csv\\\\Reader\\:\\:fetchAssoc\\(\\)\\.$#"
+			count: 1
+			path: src/Helper/CmsHelper.php
+
+		-
+			message: "#^Call to an undefined method Magento\\\\Cms\\\\Api\\\\Data\\\\BlockInterface\\:\\:setStores\\(\\)\\.$#"
+			count: 1
+			path: src/Helper/CmsHelper.php
+
+		-
+			message: "#^Call to an undefined method Magento\\\\Cms\\\\Api\\\\Data\\\\PageInterface\\:\\:getData\\(\\)\\.$#"
+			count: 1
+			path: src/Helper/CmsHelper.php
+
+		-
+			message: "#^Call to an undefined method Magento\\\\Cms\\\\Api\\\\Data\\\\PageInterface\\:\\:setData\\(\\)\\.$#"
+			count: 1
+			path: src/Helper/CmsHelper.php
+
+		-
+			message: "#^Call to an undefined method Magento\\\\Cms\\\\Model\\\\BlockFactory\\:\\:save\\(\\)\\.$#"
+			count: 1
+			path: src/Helper/CmsHelper.php
+
+		-
+			message: "#^Iterating over an object of an unknown class League\\\\Csv\\\\Modifier\\\\MapIterator\\.$#"
+			count: 2
+			path: src/Helper/CmsHelper.php
+
+		-
+			message: "#^Method PixelPerfect\\\\CmsImporter\\\\Helper\\\\CmsHelper\\:\\:createCmsBlocks\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Helper/CmsHelper.php
+
+		-
+			message: "#^Method PixelPerfect\\\\CmsImporter\\\\Helper\\\\CmsHelper\\:\\:createOrUpdateCmsPages\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Helper/CmsHelper.php
+
+		-
+			message: "#^Method PixelPerfect\\\\CmsImporter\\\\Helper\\\\CmsHelper\\:\\:fetchLocaleStores\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Helper/CmsHelper.php
+
+		-
+			message: "#^Method PixelPerfect\\\\CmsImporter\\\\Helper\\\\CmsHelper\\:\\:getAllowedLocales\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Helper/CmsHelper.php
+
+		-
+			message: "#^Method PixelPerfect\\\\CmsImporter\\\\Helper\\\\CmsHelper\\:\\:setAllowedLocales\\(\\) has parameter \\$allowedLocales with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Helper/CmsHelper.php
+
+		-
+			message: "#^Parameter \\$csvRecords of method PixelPerfect\\\\CmsImporter\\\\Helper\\\\CmsHelper\\:\\:createCmsBlocks\\(\\) has invalid type League\\\\Csv\\\\Modifier\\\\MapIterator\\.$#"
+			count: 2
+			path: src/Helper/CmsHelper.php
+
+		-
+			message: "#^Parameter \\$csvRecords of method PixelPerfect\\\\CmsImporter\\\\Helper\\\\CmsHelper\\:\\:createOrUpdateCmsPages\\(\\) has invalid type League\\\\Csv\\\\Modifier\\\\MapIterator\\.$#"
+			count: 1
+			path: src/Helper/CmsHelper.php
+
+		-
+			message: "#^Property PixelPerfect\\\\CmsImporter\\\\Helper\\\\CmsHelper\\:\\:\\$allowedLocales type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Helper/CmsHelper.php
+
+		-
+			message: "#^Property PixelPerfect\\\\CmsImporter\\\\Helper\\\\CmsHelper\\:\\:\\$blockRepository \\(Magento\\\\Cms\\\\Model\\\\BlockFactory\\) does not accept Magento\\\\Cms\\\\Api\\\\BlockRepositoryInterface\\.$#"
+			count: 1
+			path: src/Helper/CmsHelper.php
+
+		-
+			message: "#^Method PixelPerfect\\\\CmsImporter\\\\Helper\\\\StoreHelper\\:\\:filterStoresByLocale\\(\\) has parameter \\$allowedLocales with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Helper/StoreHelper.php
+
+		-
+			message: "#^Method PixelPerfect\\\\CmsImporter\\\\Helper\\\\StoreHelper\\:\\:filterStoresByLocale\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Helper/StoreHelper.php
+
+		-
+			message: "#^Method PixelPerfect\\\\CmsImporter\\\\Helper\\\\StoreHelper\\:\\:getLocaleForAllStores\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Helper/StoreHelper.php
